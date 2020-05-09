@@ -26,7 +26,7 @@ function generatePassword() {
   }
    
   var passwordLength=parseInt(prompt("Choose how long you want your password to be (Choose from 8 to 128)"));
-  while (passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != "number" || passwordLength === NaN || passwordLength === null) {
+  if (passwordLength < 8 || passwordLength > 128 || typeof(passwordLength) != "number" || passwordLength === NaN || passwordLength === null) {
       alert("Choose a number that is more than 8 and less than 128 characters");
       passwordLength=parseInt(prompt("Choose how long you want your password to be. Choose from 8 to 128"))
   } 
@@ -35,14 +35,18 @@ function generatePassword() {
 
   if (useLowerCase==true){
     charChoices.push(lowerCaseChar);
-} else if (useUpperCase==true){
+} 
+
+  if (useUpperCase==true){
     charChoices.push(upperCaseChar)
 
-} else if (useNumeric==true){
+} 
+
+  if (useNumeric==true){
     charChoices.push(numericChar)
     
 }
-  else if (useSpecial==true){
+  if (useSpecial==true){
     charChoices.push(specialChar)
 }
 
